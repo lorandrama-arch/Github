@@ -1,0 +1,251 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prishtina International Airport</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header id="home">
+    <img src="limak-image.png" alt="Prishtina Airport and Limak" class="logo">
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#tickets">Book Tickets</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="flights">
+    <div class="tabs">
+        <button class="active" onclick="showFlights('arrivals', this)">✈ Arrivals</button>
+        <button onclick="showFlights('departures', this)">✈ Departures</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th id="placeHeading">Origin</th>
+                <th>Airline</th>
+                <th>Flight no.</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="flightTable">
+            <tr>
+                <td>23:00</td>
+                <td>Frankfurt (DE)</td>
+                <td>LUFTHANSA</td>
+                <td>LH 1454</td>
+                <td>Landed</td>
+            </tr>
+            <tr>
+                <td>23:15</td>
+                <td>Istanbul / Stamboll (TR)</td>
+                <td>AIR ALBANIA</td>
+                <td>ZB 1004</td>
+                <td>On Time</td>
+            </tr>
+            <tr>
+                <td>23:15</td>
+                <td>Milan Malpensa (IT)</td>
+                <td>Wizz Air Malta</td>
+                <td>W4 6630</td>
+                <td class="delayed">Delayed</td>
+            </tr>
+            <tr>
+                <td>23:20</td>
+                <td>Bologna/Bolonje (IT)</td>
+                <td>AIR ALBANIA</td>
+                <td>ZB 2006</td>
+                <td>Landed</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="tickets" class="booking">
+    <h2>Book Your Flight</h2>
+
+    <form onsubmit="bookFlight(event)">
+        <label for="from">From</label>
+        <input id="from" type="text" value="Prishtina" required>
+
+        <label for="to">To</label>
+        <input id="to" type="text" placeholder="Enter destination" required>
+
+        <div class="form-row">
+            <div>
+                <label for="trip">Duration</label>
+                <select id="trip">
+                    <option>One Way</option>
+                    <option>Round Trip</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="passengers">Passengers</label>
+                <select id="passengers">
+                    <option>1 passenger</option>
+                    <option>2 passengers</option>
+                    <option>3 passengers</option>
+                    <option>4 passengers</option>
+                    <option>5 passengers</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="class">Airfare</label>
+                <select id="class">
+                    <option>Economy</option>
+                    <option>Business</option>
+                    <option>First Class</option>
+                </select>
+            </div>
+        </div>
+
+        <label for="date">Departure date</label>
+        <input id="date" type="date" required>
+
+        <button class="search-button" type="submit">Search Flights</button>
+        <p id="bookingMessage"></p>
+    </form>
+</section>
+
+<section class="destinations">
+    <h2>Explore the World</h2>
+    <div class="destination-grid">
+        <img src="Paris.png" alt="Eiffel Tower in Paris">
+        <img src="aaaa.jpg" alt="Modern airport terminal">
+        <img src="cafes1.png" alt="Coffee and croissant">
+    </div>
+</section>
+
+<section class="services">
+    <div class="cards">
+
+        <article class="card">
+            <a href="#destinations">
+                <img src="Paris.png" alt="Travel Inspiration">
+                <h3>Travel Inspiration</h3>
+                <p>Find out about destinations and discover places for your next trip.</p>
+            </a>
+        </article>
+
+        <article class="card">
+            <a href="#tickets">
+                <img src="jj.jpg" alt="Flight Schedules and Map">
+                <h3>Flight Schedules &amp; Map</h3>
+                <p>View flight options and explore destinations for your journey.</p>
+            </a>
+        </article>
+
+        <article class="card">
+            <a href="#passengers">
+                <img src="ee.png" alt="Airport passengers">
+                <h3>Listening to Passengers</h3>
+                <p>Share feedback and help us improve your airport experience.</p>
+            </a>
+        </article>
+
+        <article class="card">
+            <a href="#cafes">
+                <img src="cafes1.png" alt="Cafes and Restaurants">
+                <h3>Cafés &amp; Restaurants</h3>
+                <p>Discover cafés and restaurants for your next airport visit.</p>
+            </a>
+        </article>
+
+    </div>
+</section>
+
+<section id="passengers" class="information">
+    <h2>Listening to Passengers</h2>
+    <img src="ee.png" alt="Passenger seating and airport services">
+    <p>We value your feedback and want to improve your airport experience.</p>
+</section>
+
+<section id="cafes" class="information">
+    <h2>Cafés &amp; Restaurants</h2>
+    <img src="cafes1.png" alt="Coffee and croissant">
+    <p>Enjoy a coffee and a snack during your journey.</p>
+</section>
+
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+        Welcome to Prishtina International Airport Adem Jashari.
+        Explore destinations, flight information and airport services.
+    </p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Prishtina International Airport Adem Jashari</p>
+    <p>For airport information, contact the official airport service.</p>
+</section>
+
+</main>
+
+<footer>
+    <p>Prishtina International Airport Adem Jashari</p>
+    <p>Limak Kosovo</p>
+    <p>&copy; 2026 Airport Website</p>
+</footer>
+
+<script>
+function showFlights(type, button) {
+    const table = document.getElementById("flightTable");
+    const heading = document.getElementById("placeHeading");
+
+    document.querySelectorAll(".tabs button").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    if (type === "arrivals") {
+        heading.textContent = "Origin";
+
+        table.innerHTML = `
+            <tr><td>23:00</td><td>Frankfurt (DE)</td><td>LUFTHANSA</td><td>LH 1454</td><td>Landed</td></tr>
+            <tr><td>23:15</td><td>Istanbul / Stamboll (TR)</td><td>AIR ALBANIA</td><td>ZB 1004</td><td>On Time</td></tr>
+            <tr><td>23:15</td><td>Milan Malpensa (IT)</td><td>Wizz Air Malta</td><td>W4 6630</td><td class="delayed">Delayed</td></tr>
+            <tr><td>23:20</td><td>Bologna/Bolonje (IT)</td><td>AIR ALBANIA</td><td>ZB 2006</td><td>Landed</td></tr>
+        `;
+    } else {
+        heading.textContent = "Destination";
+
+        table.innerHTML = `
+            <tr><td>08:00</td><td>Frankfurt (DE)</td><td>LUFTHANSA</td><td>LH 1455</td><td>Scheduled</td></tr>
+            <tr><td>09:15</td><td>Istanbul (TR)</td><td>AIR ALBANIA</td><td>ZB 1005</td><td>Scheduled</td></tr>
+            <tr><td>11:30</td><td>Milan Malpensa (IT)</td><td>Wizz Air Malta</td><td>W4 6631</td><td>Scheduled</td></tr>
+            <tr><td>13:20</td><td>Bologna (IT)</td><td>AIR ALBANIA</td><td>ZB 2007</td><td>Scheduled</td></tr>
+        `;
+    }
+}
+
+function bookFlight(event) {
+    event.preventDefault();
+
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+    const date = document.getElementById("date").value;
+
+    document.getElementById("bookingMessage").textContent =
+        "Search request: " + from + " to " + to +
+        " on " + date +
+        ". This is a demo; no real ticket has been booked.";
+}
+</script>
+
+</body>
+</html>
+```
